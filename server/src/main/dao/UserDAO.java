@@ -4,7 +4,7 @@ import java.util.List;
 
 import main.models.Participant;
 
-public interface User {
+public interface UserDAO {
 
 	List<Participant> list();
 	

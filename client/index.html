@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/client/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/client/js/script.js"></script>
     <title>Discord Secret Santa</title>
 </head>
 <body>
     <header>
-        <h1>Stay a While and Secret Santa</h1>
+        <div class="banner">
+            <h1>Stay a While and Secret Santa</h1>
+        </div>
     </header>
+
+    <div class="form">
+        <form id="sign-up-form">
+          <div class="item">
+            <p>Username</p>
+            <div class="name-item">
+              <input type="text" name="username" placeholder="xXxGaMeRxXx" required/>
+            </div>
+          </div>
+        <div class="item">
+            <p>Address</p>
+            <input type="text" name="address" placeholder="123 Main St. Pittsburgh PA 15201" required/>
+        </div>
+          <div class="item">
+            <p>Wishlist URL or gift ideas</p>
+            <textarea rows="3" name="wishlist" required></textarea>
+          </div>
+          <div class="btn-block">
+          <button onclick="SubForm()" type="button">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </body>
+
 </body>
 </html>

@@ -14,8 +14,12 @@ public class Participant {
 		this.email = email;
 		this.address = address;
 	}
+
 	
-	
+	public Participant() {
+	}
+
+
 	public String getName() {
 		return name;
 	}
