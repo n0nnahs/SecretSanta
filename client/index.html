@@ -3,42 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/client/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="/client/js/script.js"></script>
-    <title>Discord Secret Santa</title>
+    <script src="/js/script.js"></script>
+    <title>Stay a While and Secret Santa</title>
 </head>
 <body>
+ 
     <header>
         <div class="banner">
             <h1>Stay a While and Secret Santa</h1>
         </div>
     </header>
 
-    <div class="form">
+    <container>
+      <div class="box" id="info">
+        <div>
+          <h2>Info</h2>
+        </div>
+        <ul>
+          <li>Sign up by December 6th</li>
+          <li>Matches go out December 7th</li>
+          <li>Price range TBD</li>
+          <li>If you sign up, you actually have to send a gift</li>
+        </ul>
+      </div>
+      
+      <div class="box">
         <form id="sign-up-form">
+          <h2>Sign up form</h2>
           <div class="item">
-            <p>Username</p>
+            <h3>Discord Username</h3>
             <div class="name-item">
               <input type="text" name="username" placeholder="xXxGaMeRxXx" required/>
             </div>
           </div>
-        <div class="item">
-            <p>Address</p>
-            <input type="text" name="address" placeholder="123 Main St. Pittsburgh PA 15201" required/>
-        </div>
           <div class="item">
-            <p>Wishlist URL or gift ideas</p>
-            <textarea rows="3" name="wishlist" required></textarea>
+            <h3>Address</h3>
+            <input type="text" name="address" placeholder="123 Main St. Pittsburgh PA 15201" required/>
+          </div>
+          <div class="item">
+            <h3>Wishlist URL or gift ideas</h3>
+            <textarea rows="3" name="wishlist" placeholder="STUFF" required></textarea>
           </div>
           <div class="btn-block">
-          <button onclick="SubForm()" type="button">SUBMIT</button>
+            <button onclick="SubForm()" type="button">SUBMIT</button>
           </div>
         </form>
       </div>
-    </body>
+    </container>
+    <div id="snowflakeContainer">
+      <span class="snowflake"></span>
+    </div>
 
 </body>
 </html>
