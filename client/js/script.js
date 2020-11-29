@@ -1,6 +1,7 @@
+
 function SubForm (){
   $.ajax({
-      url:'https://api.apispreadsheets.com/data/4146/',
+      url:'localhost:8080/users',
       type:'post',
       data:$("#sign-up-form").serializeArray(),
       success: function(){

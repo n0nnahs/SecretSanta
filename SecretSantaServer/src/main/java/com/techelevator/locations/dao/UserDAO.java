@@ -10,6 +10,6 @@ public interface UserDAO {
 	List<Participant> list();
 	
 
-	Participant add();
+	Participant add(Participant participant);
 	
 }

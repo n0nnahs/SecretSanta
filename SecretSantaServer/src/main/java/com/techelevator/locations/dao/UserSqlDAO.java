@@ -25,7 +25,7 @@ public class UserSqlDAO implements UserDAO {
 	@Override
 	public List<Participant> list() {
 		List<Participant> participants = new ArrayList<>();
-		String sql = "SELECT discord_name, address, wishlist FROM users";
+		String sql = "SELECT id, discord_name, address, wishlist FROM users";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 		while(results.next()) {
@@ -37,16 +37,19 @@ public class UserSqlDAO implements UserDAO {
 	}
 
 	@Override
-	public Participant add() {
-		String sqlAdd = "INSERT INTO users(discord_name, address, wishlist) VALUES (?, ?, ?)";
-		Participant user = null;
-		//jdbcTemplate.add(sqlAdd, user.getName(), user.getAddress(), user.getEmail(), user.getWishlist());
+	public Participant add(Participant user) {
+		String sqlAdd = "INSERT INTO users(id, discord_name, address, wishlist) VALUES (DEFAULT, ?, ?, ?) RETURNING id";
+
+		SqlRowSet returningId = jdbcTemplate.queryForRowSet(sqlAdd, user.getName(), user.getAddress(), user.getWishlist());
+		returningId.next();
+		user.setId(returningId.getInt("id"));
 		return user;
 	}
 
 	
 	private Participant mapRowToParticipant(SqlRowSet results) {
 		Participant participant = new Participant();
+		participant.setId(results.getInt(1));
 		participant.setName(results.getString("discord_name"));
 		participant.setAddress(results.getString("address"));
 		participant.setWishlist(results.getString("wishlist"));
