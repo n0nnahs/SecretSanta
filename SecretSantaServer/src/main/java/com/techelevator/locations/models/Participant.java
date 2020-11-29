@@ -1,42 +1,33 @@
 package com.techelevator.locations.models;
 
 public class Participant {
+	private int id;
 	private String name;
 	private String address;
-	private String email;
 	private String wishlist;
-	private String recipient;
-	private String sender;
-	
-	
-	public Participant(String name, String email, String address) {
+
+	public Participant(String name, String wishlist, String address) {
 		this.name = name;
-		this.email = email;
 		this.address = address;
+		this.wishlist = wishlist;
+	}
+
+	
+	public Participant(int id, String name, String wishlist, String address) {
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.wishlist = wishlist;
 	}
 
 	
 	public Participant() {
 	}
-
-
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getWishlist() {
 		return wishlist;
@@ -44,16 +35,21 @@ public class Participant {
 	public void setWishlist(String wishlist) {
 		this.wishlist = wishlist;
 	}
-	public String getRecipient() {
-		return recipient;
+	public String getAddress() {
+		return address;
 	}
-	public void setRecipient(String recipient) {
-		this.recipient = recipient;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getSender() {
-		return sender;
+
+
+	public int getId() {
+		return id;
 	}
-	public void setSender(String sender) {
-		this.sender = sender;
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
 }

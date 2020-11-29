@@ -2,8 +2,12 @@ package com.techelevator.locations.controllers;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.locations.dao.UserDAO;
@@ -14,6 +18,7 @@ import com.techelevator.locations.models.Participant;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins= "http://127.0.0.1:5500/")
 public class UserController {
 	
 	private UserDAO userDAO;
@@ -27,9 +32,10 @@ public class UserController {
 		return userDAO.list();
 	}
 	
-	@RequestMapping(path = "/users/add", method = RequestMethod.POST)
-	public Participant add() {
-		return null;
+	@ResponseStatus(HttpStatus.CREATED)
+	@RequestMapping(path = "", method = RequestMethod.POST)
+	public Participant add(@RequestBody Participant participant) {
+		return userDAO.add(participant);
 	}
 
 	
