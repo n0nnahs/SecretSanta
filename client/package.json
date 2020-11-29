@@ -1,0 +1,20 @@
+{
+  "name": "secretsanta",
+  "version": "1.0.0",
+  "description": "Created a website to capture user input to be added to the list of Secret Santa participants",
+  "scripts": {
+    "start:web": "npx http-server -p 80 -d false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0nnahs/SecretSanta.git"
+  },
+  "author": "n0nnahs",
+  "bugs": {
+    "url": "https://github.com/n0nnahs/SecretSanta/issues"
+  },
+  "homepage": "https://github.com/n0nnahs/SecretSanta#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
