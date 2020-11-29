@@ -3,7 +3,7 @@ function SubForm (){
   $.ajax({
       url: `${window.location.origin}:8080/users`,
       type: 'post',
-      data: $("#sign-up-form").serializeArray(),
+      data: JSON.stringify("#sign-up-form"),
       contentType: "application/json; charset=utf-8",
       success: function(){
         alert("Added to the list :)");
