@@ -16,11 +16,11 @@ $ cd secret-santa
 
 # Install Postgres, & configure the default postgres user
 $ sudo apt install postgresql postgresql-contrib
-$ psql -U postgres
+$ sudo -u postgres psql
 > \password   # Set the postgres user's password, we'll need to fill this in later for the `application.properties` file
 > CREATE DATABASE secretsanta;  # Should return `CREATE DATABASE` if successful
 > \q
-$ sudo nano /etc/postgresql/12/main/pg_hba.conf   # change postgres user's authentication method from "peer" to "md5"
+$ sudo nano /etc/postgresql/12/main/pg_hba.conf   # change "Database administrative login" postgres user's authentication method from "peer" to "md5"
 $ sudo service postgresql restart
 # Run the seedscript
 $ psql -U postgres -d secretsanta -f ./SecretSantaServer/createdb.sql
@@ -34,7 +34,7 @@ $ cd SecretSantaServer/
 $ rm ./src/main/resources/application.properties
 # Next we'll make a copy of the application.example.properties file, and edit it to
 #   set the username to `postgres`, and the password to what was entered above
-$ cp ./src/main/resources/application.example.properties
+$ cp ./src/main/resources/application.example.properties ./src/main/resources/application.properties
 $ nano ./src/main/resources/application.properties
 
 # Finally, we can run the server: 🤞
