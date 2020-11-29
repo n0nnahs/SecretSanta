@@ -18,29 +18,29 @@ import com.techelevator.locations.models.Participant;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins= "http://127.0.0.1:5500/")
+@CrossOrigin(origins= "*")
 public class UserController {
-	
+
 	private UserDAO userDAO;
-	
+
 	public UserController(UserDAO dao) {
 		this.userDAO = dao;
 	}
-	
+
 	@RequestMapping(path = "", method = RequestMethod.GET)
 	public List<Participant> list(){
 		return userDAO.list();
 	}
-	
+
 	@ResponseStatus(HttpStatus.CREATED)
 	@RequestMapping(path = "", method = RequestMethod.POST)
 	public Participant add(@RequestBody Participant participant) {
 		return userDAO.add(participant);
 	}
 
-	
-	
-	
+
+
+
 
 
 }

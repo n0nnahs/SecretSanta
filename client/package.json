@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Created a website to capture user input to be added to the list of Secret Santa participants",
   "scripts": {
-    "start:web": "npx http-server -p 80 -d false"
+    "start:web": "npx http-server -p 80 --cors -d false"
   },
   "repository": {
     "type": "git",
