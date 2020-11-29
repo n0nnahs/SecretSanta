@@ -4,6 +4,7 @@ function SubForm (){
       url:'localhost:8080/users',
       type:'post',
       data:$("#sign-up-form").serializeArray(),
+      contentType: "application/json; charset=utf-8",
       success: function(){
         alert("Added to the list :)")
       },
