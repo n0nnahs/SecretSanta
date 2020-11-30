@@ -1,9 +1,19 @@
 
-function SubForm (){
-  $.ajax({
+  function SubForm (){
+    let name = document.querySelector('[name="name"]');
+    let address = document.querySelector('[name="address"]');
+    let wishlist = document.querySelector('[name="wishlist"]');
+
+    const userToBeAdded = {
+      name: name.value,
+      address: address.value,
+      wishlist: wishlist.value
+    };
+
+    $.ajax({
       url: `${window.location.origin}:8080/users`,
       type: 'post',
-      data: JSON.stringify("#sign-up-form"),
+      data: JSON.stringify(userToBeAdded),
       contentType: "application/json; charset=utf-8",
       success: function(){
         alert("Added to the list :)");
