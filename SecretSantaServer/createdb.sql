@@ -6,9 +6,9 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users
 (
 	id serial,
-	discord_name varchar(64) not null,
-	address varchar(225) not null,
-    wishlist varchar(255) null,
+	discord_name varchar(255) not null,
+	address varchar(1000) not null,
+    wishlist varchar(5000) null,
 
     constraint pk_userId primary key (id)
 );
